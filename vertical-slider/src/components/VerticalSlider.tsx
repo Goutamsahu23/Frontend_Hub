@@ -29,6 +29,16 @@ export default function VerticalSlider() {
     }
   };
 
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      changeSlide("up");
+    }, 5000);
+
+    return () => clearInterval(interval); // cleanup
+  }, []);
+
+
   
 
   return (
